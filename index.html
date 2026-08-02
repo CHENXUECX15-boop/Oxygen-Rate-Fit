@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oxygen Rate Fit</title>
+  <link rel="stylesheet" href="styles.css?v=manual-download-png-20260710">
+</head>
+<body>
+  <main class="layout">
+    <aside class="panel">
+      <h1>Oxygen Rate Fit</h1>
+      <p class="muted">Automatic fitting with manual point selection</p>
+      <label>TXT file or folder path</label>
+      <input id="pathInput" value="G:\Users\19104\Desktop\PTC\oxygen\20260707-2">
+      <button id="runPath">Read path and fit</button>
+      <label>Upload TXT</label>
+      <input id="fileInput" type="file" multiple accept=".txt,text/plain">
+      <button id="runUpload">Upload and fit</button>
+      <h2>Samples</h2>
+      <div class="axis-controls side-axis-controls">
+        <label>X min <input id="xMin" type="number" step="any" placeholder="auto"></label>
+        <label>X max <input id="xMax" type="number" step="any" placeholder="auto"></label>
+        <label>Y min <input id="yMin" type="number" step="any" placeholder="auto"></label>
+        <label>Y max <input id="yMax" type="number" step="any" placeholder="auto"></label>
+        <button id="applyAxis">Apply axes</button>
+        <button id="resetAxis">Auto range</button>
+      </div>
+      <div id="sampleList" class="sample-list"></div>
+    </aside>
+    <section class="main">
+      <header>
+        <div>
+          <div id="status" class="muted">Waiting for input</div>
+          <h2 id="title">No sample selected</h2>
+        </div>
+      </header>
+      <canvas id="plot"></canvas>
+      <div class="controls">
+        <div class="metrics">
+          <div><span>rate</span><b id="rate">--</b></div>
+          <div><span>R²</span><b id="r2">--</b></div>
+          <div><span>points</span><b id="points">--</b></div>
+        </div>
+        <div class="control-actions">
+          <button id="pickStart">Select range</button>
+          <button id="pickEnd">Clear selection</button>
+          <label>Start <input id="startIndex" type="number" min="0" value="0"></label>
+          <label>End <input id="endIndex" type="number" min="0" value="0"></label>
+          <button id="saveManual">Save manual fit</button>
+          <button id="exportPng">Export PNG</button>
+        </div>
+      </div>
+      <footer id="message">PNG is saved to the system Downloads folder at 600 DPI only when Export PNG is clicked. CSV files and summaries are saved in oxygen_rate_fit_web.</footer>
+    </section>
+  </main>
+  <script src="app.js?v=continuous-english-20260710"></script>
+</body>
+</html>

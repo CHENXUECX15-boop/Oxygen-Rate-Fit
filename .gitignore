@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+
+oxygen_rate_fit_output*/
+oxygen_rate_web_uploads/
+oxygen_rate_fit_web/
+
+.DS_Store
+Thumbs.db
